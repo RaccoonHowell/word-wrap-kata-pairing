@@ -28,4 +28,12 @@ describe Wrapper do
     it 'can split at whitespace and remove trailing whitespace from start of word' do
         expect(@wrapper.wrap("christmas day", 9)).to eq("christmas\nday")
     end
+
+    it 'can split early when the space is before column' do
+        expect(@wrapper.wrap("the top", 5)).to eq("the\ntop")
+    end
+
+    it 'can split early when the space is before column' do
+        expect(@wrapper.wrap("the rabbit", 6)).to eq("the\nrabbit")
+    end
 end
