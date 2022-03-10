@@ -36,4 +36,8 @@ describe Wrapper do
     it 'can split early when the space is before column' do
         expect(@wrapper.wrap("the rabbit", 6)).to eq("the\nrabbit")
     end
+
+    it 'can keep as many words on the line as possible' do
+        expect(@wrapper.wrap("the cat sat", 7)).to eq("the cat\nsat")
+    end
 end
