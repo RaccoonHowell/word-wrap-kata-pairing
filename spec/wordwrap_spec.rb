@@ -20,4 +20,12 @@ describe Wrapper do
     it 'can return a string that is longer than the number given and split it onto a new line' do
         expect(@wrapper.wrap("christmas", 6)).to eq("christ\nmas")
     end
+
+    it 'can split at whitespace and remove trailing whitespace from end of word' do
+        expect(@wrapper.wrap("christmas day", 10)).to eq("christmas\nday")
+    end
+
+    it 'can split at whitespace and remove trailing whitespace from start of word' do
+        expect(@wrapper.wrap("christmas day", 9)).to eq("christmas\nday")
+    end
 end
